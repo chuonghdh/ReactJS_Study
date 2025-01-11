@@ -35,8 +35,8 @@ function App() {
     <div>
       {/* Pass different interval values to each Clock */}
       <Clock interval={1000} />
-      <Clock interval={2000} />
       <Clock interval={3000} />
+      <Clock interval={5000} />
       {isLoggedIn ? <UserGreeting /> : <GuestGreeting />}
     </div>
   );
