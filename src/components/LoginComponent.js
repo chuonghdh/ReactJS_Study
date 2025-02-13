@@ -19,7 +19,6 @@ const LoginComponent = () => {
           "Content-Type": "application/json",
           // "Host":"172.23.144.1",
           "Accept": "*/*",
-          "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTc0MzU4NzMwNn0.onTzA2AexiDb0j-EEATCzgYCMwZ6f7usK7y3hvA_2OxvtndZ4helDhHEi5dfj_FRPt8OVSV2Mu1o6Weji4ZY8w" // Add your token here
         },
         body: JSON.stringify(data),
         credentials: "include"
