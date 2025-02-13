@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse'; // Import PapaParse for CSV parsing
 import './01_ToDoList.css'; // Optional CSS for styling
-
 import csvFile from './data/todolist.csv'; // Import the CSV file
+//console.log(csvFile)
+//let csvFile = "./data/todolist.csv"
 
 const ToDoList = () => {
-  const [tasks, setTasks] = useState([]); // Store tasks
+  const [tasks, setTasks] = useState([]); // Store tasks; Q1: ý nghĩa của 2 param
   const [newTask, setNewTask] = useState({
     Task_ID: '',
     Task_Name: '',
@@ -15,24 +16,27 @@ const ToDoList = () => {
     Status: ''
   }); // New task for adding
 
-  useEffect(() => {
+  useEffect(() => { // Hook cua react js built-in function inside react; gồm 2 param: 1 function; 2 dependency; nếu depen rỗng thì ~ chạy lần đầu lúc render
     // Fetch CSV from the public directory
     Papa.parse(csvFile, {
       download: true,
       header: true,
       transformHeader: (header) => header.trim(),
       complete: (result) => {
+        //Q2: ý nghĩa của dòng setTasks
         setTasks(result.data.filter((row) => Object.values(row).some((value) => value))); // Remove empty rows
       },
       error: (error) => {
         console.error('Error reading CSV file:', error);
       },
     });
+    // cách debug
+    //console.log(newTask);
   }, []);
 
   // Handle cell edit
   const handleEdit = (index, field, value) => {
-    const updatedTasks = [...tasks];
+    const updatedTasks = [...tasks]; //Q3: ...tasks là gì? 
     updatedTasks[index][field] = value;
     setTasks(updatedTasks);
   };
@@ -40,6 +44,7 @@ const ToDoList = () => {
   // Handle new task input change
   const handleNewTaskChange = (field, value) => {
     setNewTask({ ...newTask, [field]: value });
+    console.log(newTask);
   };
 
   // Add a new row

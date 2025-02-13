@@ -1,0 +1,40 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 20%; /* Fixed width for filter controls */
+    height: 100%; /* Take up full height of the parent container */
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd; /* Ensure the divider between filters and charts */
+    box-sizing: border-box; /* Include padding in width and height calculations */
+  }
+  
+  .filter-container label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .filter-container input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-container {
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Adjust height */
+      flex-direction: column; /* Align filters horizontally */
+      justify-content: center;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      gap: 10px; /* Add spacing between filters */
+    }
+  
+    .filter-container label {
+      margin-bottom: 0;
+    }
+  }
+  

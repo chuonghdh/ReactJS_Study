@@ -1,0 +1,21 @@
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .filter-section {
+    width: 15%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+  }
+  
+  .chart-section {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for charts */
+    gap: 20px;
+    padding: 10px;
+    justify-content: space-between; /* Align charts in a row */
+  }
+  
